@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean name="Example1" class="tutorial3.collectionsDI.Example">
+		<property name="studentName" value="Edward Elric" />
+		<property name="studentAddresses">
+			<list>
+				<value>Tokyo</value>
+				<value>Osaka</value>
+				<value>Nagoya</value>
+				<value>Kyoto</value>
+				<null/>
+			</list>
+		</property>
+
+		<property name="studentContatcs">
+			<set>
+				<value>1234567890</value>
+				<value>9876543210</value>
+				<value>9876543210</value>
+				<null/>
+			</set>
+		</property>
+
+		<property name="courseDuration">
+			<map>
+				<entry key="B.Sc." value="3" />
+				<entry key="B.Tech." value="4" />
+			</map>
+		</property>
+	</bean>
+
+
+
+</beans>

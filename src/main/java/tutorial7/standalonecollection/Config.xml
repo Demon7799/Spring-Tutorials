@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<context:annotation-config />
+
+	<!--           StandAlone Collections                 -->
+
+
+	<util:list list-class="java.util.LinkedList" id="brands">
+		<value>SamSung</value>
+		<value>Nokia</value>
+		<value>LG</value>
+		<value>Lava</value>
+		<value>Sony</value>
+	</util:list>
+
+	<util:map map-class="java.util.HashMap" id="courses">
+		<entry key="B.Sc." value="3" />
+		<entry key="B.A." value="3" />
+		<entry key="B.Tech." value="4" />
+	</util:map>
+
+	<util:properties id="dbconfigExample">
+		<prop key="driver"> com.mysql.jdbc.Driver </prop>
+		<prop key="username"> durgesh </prop>
+		<prop key="password"> abc </prop>
+		<prop key="url"> mysql: jdbc: //localhost :3306/database </prop>
+	</util:properties>
+
+
+	<bean name="Bean1" class="tutorial7.standalonecollection.Example1">
+		<property name="companies" ref="brands" />
+		<property name="courses">
+			<ref bean="courses" />
+		</property>
+		<property name="properties" ref="dbconfigExample" />
+	</bean>
+
+</beans>

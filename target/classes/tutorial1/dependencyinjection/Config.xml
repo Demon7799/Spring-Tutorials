@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!-- here we are passing the values to the constructor -->
+	<bean class="tutorial1.dependencyinjection.Person" name="ExampleBean1">
+
+		<constructor-arg value="Eren Yaeger" />
+		<constructor-arg value="Wall Maria" />
+
+	</bean>
+
+
+	<!-- We can also define a bean as below -->
+	<bean class="tutorial1.dependencyinjection.Person" name="ExampleBean3">
+	<property name="name" value="Vegeta" />
+	<property name="address" value="Planet Vegeta" />
+	</bean>
+
+	<!-- here we are passing the values to setter methods -->
+	<!-- We can also define a bean as below by using the p schema -->
+	<bean class="tutorial1.dependencyinjection.Person" name="ExampleBean2"
+		p:name="Akaza" p:address="Mugen Train" />
+
+</beans>

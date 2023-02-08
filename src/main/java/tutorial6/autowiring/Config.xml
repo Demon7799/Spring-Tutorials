@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean name="Bean1" class="tutorial6.autowiring.Example2">
+		<property name="city" value="New York" />
+		<property name="country" value="US" />
+	</bean>
+	
+	<!-- We can Autowire By Name as seen in the  below example 
+	
+	<bean name="Bean2" class="tutorial6.autowiring.Example1" autowire="byName" />
+	
+	-->
+	
+	<bean name="Bean2" class="tutorial6.autowiring.Example1" autowire="byType" />
+	
+		
+
+
+</beans>
